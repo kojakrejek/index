@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <title>E-DOTS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: transparent !important;
+        font-family: 'Orbitron', sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .edots-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        animation: fadein 2s ease-in-out;
+      }
+
+      img {
+        height: 120px;
+        transition: transform 0.3s ease;
+      }
+
+      img:hover {
+        transform: scale(1.1);
+      }
+
+      h1 {
+        font-size: 48px;
+        color: gold;
+        margin: 0;
+        letter-spacing: 1.5px;
+        animation: blink 1.5s infinite;
+        text-shadow: 0 0 10px gold, 0 0 20px orange;
+      }
+
+      p {
+        color: #ccc;
+        font-size: 14px;
+        margin: 6px 0 0 2px;
+        animation: fadein 2s ease-in;
+        letter-spacing: 1.2px;
+      }
+
+      .glow-line {
+        height: 4px;
+        background: linear-gradient(90deg, gold, orange);
+        border-radius: 2px;
+        margin-top: 8px;
+        animation: slideglow 3s infinite linear;
+      }
+
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+      }
+
+      @keyframes fadein {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes slideglow {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="edots-container">
+      <img src="https://i.imgur.com/ppx3l87.png" alt="Logo Projek">
+      <div>
+        <h1>E-DOTS</h1>
+        <p>Electronik Document Tracking System</p>
+        <div class="glow-line"></div>
+      </div>
+    </div>
+  </body>
+</html>
