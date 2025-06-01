@@ -17,6 +17,7 @@
         overflow: hidden;
       }
 
+      /* Slide in from left */
       @keyframes slideInLeft {
         0% {
           opacity: 0;
@@ -28,6 +29,7 @@
         }
       }
 
+      /* Fade in */
       @keyframes fadein {
         from {
           opacity: 0;
@@ -39,23 +41,28 @@
         }
       }
 
+      /* Blink text */
       @keyframes blink {
         0%, 100% { opacity: 1; }
-        50% { opacity: 0.9; } /* Kurangkan efek blink */
+        50% { opacity: 0.3; }
       }
 
+      /* Sliding glow effect */
       @keyframes slideglow {
         0% { background-position: 0% 50%; }
         100% { background-position: 100% 50%; }
       }
       
-      /* Efek glow yang lebih sederhana */
-      @keyframes softglow {
-        0%, 100% {
-          text-shadow: 0 0 8px rgba(255,215,0,0.7);
+      /* New glowing light effect */
+      @keyframes pulseglow {
+        0% {
+          text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 15px orange, 0 0 20px orange;
         }
         50% {
-          text-shadow: 0 0 12px rgba(255,215,0,0.9);
+          text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px orange, 0 0 40px orange;
+        }
+        100% {
+          text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 15px orange, 0 0 20px orange;
         }
       }
 
@@ -86,11 +93,12 @@
         color: gold;
         margin: 0;
         letter-spacing: 1.5px;
-        animation-name: blink, fadein, softglow;
-        animation-duration: 2s, 1s, 3s; /* Perlahan animasi glow */
+        animation-name: blink, fadein, pulseglow;
+        animation-duration: 1.5s, 1s, 2s;
         animation-iteration-count: infinite, 1, infinite;
         animation-delay: 0s, 1s, 1s;
         animation-fill-mode: forwards;
+        position: relative;
       }
 
       p {
